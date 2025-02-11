@@ -5,12 +5,16 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 header {
+    width: 100%;
     background-color: #9370db; /* Фиалковый цвет */
-    padding: 1rem;
+    padding: 2rem 0;
 }
 
 .main-menu {
@@ -22,7 +26,7 @@ header {
 }
 
 .main-menu li {
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     width: 100%;
     text-align: center;
 }
@@ -31,20 +35,15 @@ header {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 0.5rem;
-    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: #7b68ee; /* Темнее фиалковый цвет */
+    transition: background-color 0.3s ease;
 }
 
 .main-menu a:hover {
-    background-color: #7b68ee; /* Темнее фиалковый цвет при наведении */
-}
-
-main {
-    padding: 1rem;
-}
-
-h1 {
-    color: #9370db; /* Фиалковый цвет для заголовков */
+    background-color: #8a2be2; /* Еще темнее фиалковый цвет при наведении */
 }
 
 /* Медиазапросы для более крупных экранов */
@@ -56,9 +55,5 @@ h1 {
 
     .main-menu li {
         margin: 0 1rem;
-    }
-
-    main {
-        padding: 2rem;
     }
 }
