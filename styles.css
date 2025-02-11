@@ -32,7 +32,7 @@ h1 {
 }
 
 .main-menu li {
-    margin: 1rem 0;
+    margin: 1.5rem 0; /* Вертикальные отступы */
     width: 100%;
 }
 
@@ -43,12 +43,21 @@ h1 {
     font-size: 1.5rem;
     padding: 1rem 2rem;
     border-radius: 10px;
-    background: linear-gradient(145deg, #7b68ee, #9370db); /* Градиент для фона */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.main-menu a:hover {
+.main-menu a.available {
+    background: linear-gradient(145deg, #7b68ee, #9370db); /* Градиент для доступных проектов */
+}
+
+.main-menu a.unavailable {
+    background-color: #d3d3d3; /* Светло-серый цвет для недоступных проектов */
+    pointer-events: none; /* Отключает кликабельность */
+    opacity: 0.7; /* Уменьшает непрозрачность */
+}
+
+.main-menu a:hover.available {
     background-color: #8a2be2; /* Еще темнее фиалковый цвет при наведении */
     transform: scale(1.05);
 }
@@ -58,9 +67,10 @@ h1 {
     .main-menu {
         flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .main-menu li {
-        margin: 0 1rem;
+        margin: 1rem;
     }
 }
