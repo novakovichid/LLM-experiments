@@ -43,11 +43,7 @@ main {
     padding: 1rem;
 }
 
-section {
-    margin-bottom: 2rem;
-}
-
-h2 {
+h1 {
     color: #9370db; /* Фиалковый цвет для заголовков */
 }
 
