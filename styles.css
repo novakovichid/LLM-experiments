@@ -1,9 +1,11 @@
+/* Mobile-first стили */
 body {
     font-family: Arial, sans-serif;
     background-color: #e0dffa; /* Фиалковый фон */
     color: #333;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 header {
@@ -15,25 +17,30 @@ header {
     list-style-type: none;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-menu li {
-    margin: 0 1rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
 }
 
 .main-menu a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 
 .main-menu a:hover {
-    text-decoration: underline;
+    background-color: #7b68ee; /* Темнее фиалковый цвет при наведении */
 }
 
 main {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 section {
@@ -42,4 +49,20 @@ section {
 
 h2 {
     color: #9370db; /* Фиалковый цвет для заголовков */
+}
+
+/* Медиазапросы для более крупных экранов */
+@media (min-width: 600px) {
+    .main-menu {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .main-menu li {
+        margin: 0 1rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
 }
