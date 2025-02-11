@@ -8,12 +8,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
+    text-align: center;
 }
 
-main {
-    width: 100%;
-    text-align: center;
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #9370db; /* Фиалковый цвет для заголовка */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .main-menu {
@@ -36,12 +43,14 @@ main {
     font-size: 1.5rem;
     padding: 1rem 2rem;
     border-radius: 10px;
-    background-color: #7b68ee; /* Темнее фиалковый цвет */
-    transition: background-color 0.3s ease;
+    background: linear-gradient(145deg, #7b68ee, #9370db); /* Градиент для фона */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .main-menu a:hover {
     background-color: #8a2be2; /* Еще темнее фиалковый цвет при наведении */
+    transform: scale(1.05);
 }
 
 /* Медиазапросы для более крупных экранов */
