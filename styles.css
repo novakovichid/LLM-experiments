@@ -163,3 +163,73 @@ h1 {
         max-width: 800px; /* Делаем шире на больших экранах */
     }
 }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+header {
+    background-color: #6200ea;
+    padding: 1rem;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+#character-selection {
+    margin-top: 20px;
+}
+
+.character-options button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#game-container {
+    margin-top: 20px;
+}
+
+#battle-log {
+    min-height: 100px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#battlefield {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.character, .enemy {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.enemy {
+    background-color: black;
+}
+
+#actions button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
