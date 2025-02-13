@@ -29,11 +29,14 @@ header {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Раздвигаем элементы по краям */
     width: 100%;
-    max-width: 600px; /* Делаем контент менее растянутым */
+    max-width: 600px; /* Чтобы не расползалось на широких экранах */
+    margin: 0 auto;
     position: relative;
 }
+
+
 
 /* Заголовок */
 h1 {
@@ -46,13 +49,16 @@ h1 {
 
 /* Кнопка "Назад" */
 .back-button {
-    position: absolute;
-    left: 1rem;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem;
+    position: relative; /* Убираем absolute */
+    left: 0;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
 
 /* Основное меню */
