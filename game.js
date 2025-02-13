@@ -1,68 +1,3 @@
-let player = { name: "", hp: 20, attack: 5, heal: 4 };
-let enemy = { hp: 15, attack: 3 };
-
-function selectCharacter(name) {
-    player.name = name;
-    if (name === "Воин") {
-        player.hp = 25;
-        player.attack = 6;
-    } else if (name === "Разбойник") {
-        player.hp = 18;
-        player.attack = 7;
-    } else if (name === "Маг") {
-        player.hp = 15;
-        player.attack = 8;
-        player.heal = 6;
-    }
-    document.getElementById("character-selection").classList.add("hidden");
-    document.getElementById("game-container").classList.remove("hidden");
-    updateBattlefield();
-}
-
-function attack() {
-    enemy.hp -= player.attack;
-    log(`🗡 ${player.name} атакует! Враг теряет ${player.attack} HP.`);
-    if (enemy.hp <= 0) {
-        log("🎉 Победа! Враг повержен.");
-        return;
-    }
-    enemyTurn();
-}
-
-function heal() {
-    player.hp += player.heal;
-    log(`💖 ${player.name} лечится на ${player.heal} HP.`);
-    enemyTurn();
-}
-
-function move() {
-    log(`🚶‍♂️ ${player.name} передвигается. Враг немного сбит с толку.`);
-    enemyTurn(true);
-}
-
-function enemyTurn(skipped = false) {
-    if (!skipped) {
-        player.hp -= enemy.attack;
-        log(`💀 Враг атакует! ${player.name} теряет ${enemy.attack} HP.`);
-        if (player.hp <= 0) {
-            log("☠️ Ты проиграл...");
-            return;
-        }
-    }
-    updateBattlefield();
-}
-
-function updateBattlefield() {
-    document.getElementById("player").textContent = `${player.name} (${player.hp} HP)`;
-    document.getElementById("enemy").textContent = `Враг (${enemy.hp} HP)`;
-}
-
-function log(message) {
-    let logDiv = document.getElementById("battle-log");
-    logDiv.innerHTML += `<p>${message}</p>`;
-    logDiv.scrollTop = logDiv.scrollHeight;
-}
-
 const playerDeck = [
     { name: "Мощный удар", type: "attack", value: 6 },
     { name: "Быстрый удар", type: "attack", value: 3 },
@@ -76,6 +11,8 @@ const enemyDeck = [
     { name: "Глухая защита", type: "defense", value: 2 },
 ];
 
+let player = { name: "Герой", hp: 10 };
+let enemy = { name: "Враг", hp: 10 };
 let selectedCards = [];
 
 function drawCards() {
@@ -129,3 +66,14 @@ function enemyTurn() {
     }
     updateBattlefield();
 }
+
+function updateBattlefield() {
+    document.getElementById("player-hp").textContent = player.hp;
+    document.getElementById("enemy-hp").textContent = enemy.hp;
+}
+
+function log(message) {
+    document.getElementById("log").textContent = message;
+}
+
+drawCards();
