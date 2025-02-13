@@ -1,4 +1,4 @@
-/* Material Design стили */
+/* Основные стили */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
@@ -12,17 +12,19 @@ body {
     text-align: center;
 }
 
+/* Контейнер для контента */
 main {
     width: 100%;
     max-width: 430px; /* Ограничение для iPhone 15 Pro Max */
     margin: 0 auto;
 }
 
+/* Хедер */
 header {
     width: 100%;
-    background-color: #6200ea; /* Фиолетовый цвет Material Design */
+    background-color: #6200ea;
     color: white;
-    padding: 1rem 1rem;
+    padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -33,27 +35,31 @@ header {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Раздвигаем элементы по краям */
     width: 100%;
-    max-width: 600px; /* Чтобы не расползалось на широких экранах */
-    margin: 0 auto;
+    max-width: 600px;
     position: relative;
 }
 
+/* Заголовок */
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 0;
     font-weight: 500;
     text-align: center;
-    width: 100%;
+    flex-grow: 1;
 }
 
+/* Кнопка назад */
 .back-button {
-    position: relative; /* Убираем absolute */
-    left: 0;
-    padding: 0.5rem 1rem;
+    position: absolute;
+    left: 1rem;
+    text-decoration: none;
+    color: white;
     background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
     border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
     transition: background 0.3s;
 }
 
@@ -61,21 +67,52 @@ h1 {
     background: rgba(255, 255, 255, 0.4);
 }
 
+/* Контейнер игры */
 .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     max-width: 400px;
     padding: 1rem;
 }
 
+/* Информация о персонаже */
 .game-info {
     font-size: 1rem;
     margin-bottom: 1rem;
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
+/* Карты */
 #player-hand {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 1rem;
 }
 
+.card {
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    background-color: #e0e0e0;
+}
+
+/* Кнопка завершения хода */
 button {
     padding: 0.75rem 1.5rem;
     background-color: #6200ea;
@@ -92,12 +129,18 @@ button:hover {
     background-color: #3700b3;
 }
 
+/* Лог */
 .log-container {
     font-size: 0.9rem;
     color: #757575;
+    width: 100%;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Медиазапросы для более крупных экранов */
+/* Медиазапросы */
 @media (min-width: 600px) {
     .game-container {
         width: 80%;
