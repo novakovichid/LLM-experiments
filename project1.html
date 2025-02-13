@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проект 1: Мобильная игра</title>
+    <title>Мрачная Гавань Лайт</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -12,17 +12,32 @@
         <header>
             <div class="header-content">
                 <a href="index.html" class="back-button">← Назад</a>
-                <h1>Проект 1: Мобильная игра</h1>
+                <h1>Мрачная Гавань: Мини</h1>
             </div>
         </header>
-        <section class="game-container">
-            <div class="placeholder">
-                <div class="game-placeholder">
-                    <!-- Плейсхолдер для игры -->
-                    Игра загружается...
-                </div>
+        
+        <section id="character-selection">
+            <h2>Выбери героя:</h2>
+            <div class="character-options">
+                <button onclick="selectCharacter('Воин')">⚔️ Воин</button>
+                <button onclick="selectCharacter('Разбойник')">🗡 Разбойник</button>
+                <button onclick="selectCharacter('Маг')">🔥 Маг</button>
+            </div>
+        </section>
+
+        <section id="game-container" class="hidden">
+            <div id="battle-log"></div>
+            <div id="battlefield">
+                <div id="player" class="character"></div>
+                <div id="enemy" class="enemy"></div>
+            </div>
+            <div id="actions">
+                <button onclick="attack()">Атака</button>
+                <button onclick="heal()">Лечение</button>
+                <button onclick="move()">Двигаться</button>
             </div>
         </section>
     </main>
+    <script src="game.js"></script>
 </body>
 </html>
