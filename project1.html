@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мрачная Гавань Лайт</title>
+    <title>Проект 1: Мобильная игра</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -12,33 +12,26 @@
         <header>
             <div class="header-content">
                 <a href="index.html" class="back-button">← Назад</a>
-                <h1>Мрачная Гавань: Мини</h1>
+                <h1>Проект 1: Мрачная гавань</h1>
             </div>
         </header>
-        
-        <section id="character-selection">
-            <h2>Выбери героя:</h2>
-            <div class="character-options">
-                <button onclick="selectCharacter('Воин')">⚔️ Воин</button>
-                <button onclick="selectCharacter('Разбойник')">🗡 Разбойник</button>
-                <button onclick="selectCharacter('Маг')">🔥 Маг</button>
-            </div>
-        </section>
 
-        <section id="game-container" class="hidden">
-            <div id="battle-log"></div>
-            <div id="battlefield">
-                <div id="player" class="character"></div>
-                <div id="enemy" class="enemy"></div>
+        <section class="game-container">
+            <div class="game-info">
+                <p><strong>Игрок:</strong> <span id="player-name">Герой</span></p>
+                <p><strong>HP:</strong> <span id="player-hp">10</span></p>
+                <p><strong>Враг HP:</strong> <span id="enemy-hp">10</span></p>
             </div>
+
             <div id="player-hand"></div>
-            <div id="actions">
-                <button onclick="attack()">Атака</button>
-                <button onclick="heal()">Лечение</button>
-                <button onclick="move()">Двигаться</button>
+            <button id="end-turn">Закончить ход</button>
+
+            <div class="log-container">
+                <p id="log"></p>
             </div>
         </section>
     </main>
+
     <script src="game.js"></script>
 </body>
 </html>
